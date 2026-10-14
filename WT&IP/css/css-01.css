@@ -1,0 +1,125 @@
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    padding: 30px;
+    margin: 0;
+    min-height: 100vh;
+}
+.glow-1 {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: #800020;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+}
+.glow-2 {
+    position: fixed;
+    bottom: -10%;
+    right: -5%;
+    width: 350px;
+    height: 350px;
+    background: #4a0414;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.2;
+    z-index: -1;
+}
+.glass-card {
+    background: rgba(40, 40, 40, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(128, 0, 32, 0.3);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.nav {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+.nav a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    background: rgba(128, 0, 32, 0.15);
+    border: 1px solid rgba(128, 0, 32, 0.4);
+    border-radius: 30px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.nav a:hover {
+    background: rgba(128, 0, 32, 0.8);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(128, 0, 32, 0.4);
+}
+h1.title {
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #ffffff, #d4a3b3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+p.desc {
+    color: #a0a0a0;
+    margin: 0;
+}
+.demo {
+    margin-top: 20px;
+}
+.demo h2, .demo h3 {
+    color: #d4a3b3;
+}
+.demo a {
+    color: #d4a3b3;
+}
+.demo button, .demo input, .demo select, .demo textarea {
+    font: inherit;
+}
+.demo button {
+    cursor: pointer;
+    padding: 12px 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4a0414, #800020);
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.demo button:hover {
+    box-shadow: 0 0 15px rgba(128, 0, 32, 0.6);
+    transform: translateY(-1px);
+}
+.demo input, .demo select, .demo textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    color: #e0e0e0;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(128, 0, 32, 0.4);
+    border-radius: 8px;
+}
+.demo table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.demo th, .demo td {
+    padding: 12px;
+    border: 1px solid rgba(128, 0, 32, 0.4);
+    text-align: left;
+}
+.demo th {
+    background: rgba(128, 0, 32, 0.3);
+}
+
+.inline{color:#ffb86c}.internal{color:#d4a3b3}.external{color:#fff;border-left:4px solid #800020;padding-left:12px}

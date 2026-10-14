@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Programs</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 30px; max-width: 900px; margin: 0 auto; overflow-x: hidden; }
+        
+        .glow-1 { position: fixed; top: -10%; left: -10%; width: 400px; height: 400px; background: #800020; border-radius: 50%; filter: blur(150px); opacity: 0.25; z-index: -1; animation: float 10s infinite alternate; }
+        .glow-2 { position: fixed; bottom: -10%; right: -5%; width: 350px; height: 350px; background: #4a0414; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1; animation: float 8s infinite alternate-reverse; }
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(20px) scale(1.1); } }
+
+        .glass-container { 
+            background: linear-gradient(135deg, rgba(50, 50, 50, 0.3) 0%, rgba(20, 20, 20, 0.6) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(128, 0, 32, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(128,0,32,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .nav-btn { display: inline-block; padding: 12px 25px; background: rgba(128, 0, 32, 0.15); color: #e0e0e0; text-decoration: none; border: 1px solid rgba(128, 0, 32, 0.4); border-radius: 30px; margin-bottom: 20px; transition: 0.3s; font-weight: bold; backdrop-filter: blur(10px); }
+        .nav-btn:hover { background: rgba(128, 0, 32, 0.8); color: white; box-shadow: 0 4px 15px rgba(128, 0, 32, 0.6); transform: translateY(-2px); }
+        
+        h1 { color: white; margin-top: 0; background: linear-gradient(45deg, #ffffff, #d4a3b3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; border-bottom: 1px solid rgba(128, 0, 32, 0.4); padding-bottom: 15px; margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        
+        h2.category-title { color: #ffb86c; font-size: 1.5rem; margin-top: 35px; margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px dashed rgba(128, 0, 32, 0.3); }
+
+        ul { list-style: none; padding-left: 0; margin: 0; }
+        li {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(128, 0, 32, 0.15);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        li:hover {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.25), rgba(74, 4, 20, 0.4));
+            border-color: rgba(255, 107, 139, 0.4);
+            transform: translateX(10px) translateY(-2px);
+            box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 107, 139, 0.1);
+        }
+
+        a.program-link { color: #d4a3b3; text-decoration: none; display: block; padding: 18px 20px; font-size: 1.1rem; line-height: 1.4; transition: color 0.3s; z-index: 2; position: relative; }
+        li:hover a.program-link { color: #ffffff; text-shadow: 0 0 8px rgba(255, 107, 139, 0.5); }
+    </style>
+</head>
+<body id="top">
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <a href="#top" class="nav-btn">JavaScript Experiments</a>
+    
+    <div class="glass-container">
+        <h1>JavaScript Programs</h1>
+        
+        <!-- SECTION 1: JAVASCRIPT -->
+        <h2 class="category-title">JavaScript</h2>
+        <ul>
+            <li><a href="js-01.html" class="program-link">1. Write a JavaScript program to display "Hello World".</a></li>
+            <li><a href="js-02.html" class="program-link">2. Write a JavaScript program to perform arithmetic operations.</a></li>
+            <li><a href="js-03.html" class="program-link">3. Write a program to find the largest of three numbers.</a></li>
+            <li><a href="js-04.html" class="program-link">4. Write a program to check whether a number is even or odd.</a></li>
+            <li><a href="js-05.html" class="program-link">5. Write a program to check whether a number is positive, negative, or zero.</a></li>
+            <li><a href="js-06.html" class="program-link">6. Write a program to find the factorial of a number.</a></li>
+            <li><a href="js-07.html" class="program-link">7. Write a program to generate the Fibonacci series.</a></li>
+            <li><a href="js-08.html" class="program-link">8. Write a program to check whether a number is prime.</a></li>
+            <li><a href="js-09.html" class="program-link">9. Write a program to check whether a number is a palindrome.</a></li>
+            <li><a href="js-10.html" class="program-link">10. Write a program to reverse a number.</a></li>
+            <li><a href="js-11.html" class="program-link">11. Write a program to find the sum of digits of a number.</a></li>
+            <li><a href="js-12.html" class="program-link">12. Write a program to find the largest and smallest element in an array.</a></li>
+            <li><a href="js-13.html" class="program-link">13. Write a program to sort an array.</a></li>
+            <li><a href="js-14.html" class="program-link">14. Write a program to find the sum and average of array elements.</a></li>
+            <li><a href="js-15.html" class="program-link">15. Write a program to demonstrate JavaScript functions.</a></li>
+            <li><a href="js-16.html" class="program-link">16. Write a program using arrow functions.</a></li>
+            <li><a href="js-17.html" class="program-link">17. Write a program demonstrating strings and string methods.</a></li>
+            <li><a href="js-18.html" class="program-link">18. Write a program demonstrating arrays and array methods.</a></li>
+            <li><a href="js-19.html" class="program-link">19. Write a program demonstrating objects in JavaScript.</a></li>
+            <li><a href="js-20.html" class="program-link">20. Write a program demonstrating Date and Math objects.</a></li>
+            <li><a href="js-21.html" class="program-link">21. DOM & Event-Based Experiments</a></li>
+            <li><a href="js-22.html" class="program-link">22. Create a webpage that changes text using JavaScript.</a></li>
+            <li><a href="js-23.html" class="program-link">23. Change the background color of a webpage using JavaScript.</a></li>
+            <li><a href="js-24.html" class="program-link">24. Create a button click event using JavaScript.</a></li>
+            <li><a href="js-25.html" class="program-link">25. Create a program to show/hide an HTML element.</a></li>
+            <li><a href="js-26.html" class="program-link">26. Create a program to change an image when a button is clicked.</a></li>
+            <li><a href="js-27.html" class="program-link">27. Create a digital clock using JavaScript.</a></li>
+            <li><a href="js-28.html" class="program-link">28. Create a simple calculator using HTML, CSS, and JavaScript.</a></li>
+            <li><a href="js-29.html" class="program-link">29. Create a number guessing game.</a></li>
+            <li><a href="js-30.html" class="program-link">30. Create a form validation program.</a></li>
+            <li><a href="js-31.html" class="program-link">31. Validate name, email, phone number, and password using JavaScript.</a></li>
+            <li><a href="js-32.html" class="program-link">32. Create a to-do list using JavaScript.</a></li>
+            <li><a href="js-33.html" class="program-link">33. Create a simple quiz application.</a></li>
+            <li><a href="js-34.html" class="program-link">34. Create a counter application with increment and decrement buttons.</a></li>
+            <li><a href="js-35.html" class="program-link">35. Create a stopwatch using JavaScript.</a></li>
+            <li><a href="js-36.html" class="program-link">36. Create a countdown timer using JavaScript.</a></li>
+            <li><a href="js-37.html" class="program-link">37. Advanced JavaScript Lab Questions</a></li>
+            <li><a href="js-38.html" class="program-link">38. Demonstrate ES6 let, const, template literals, and destructuring.</a></li>
+            <li><a href="js-39.html" class="program-link">39. Demonstrate spread and rest operators.</a></li>
+            <li><a href="js-40.html" class="program-link">40. Demonstrate classes and objects.</a></li>
+            <li><a href="js-41.html" class="program-link">41. Demonstrate inheritance in JavaScript.</a></li>
+            <li><a href="js-42.html" class="program-link">42. Demonstrate callbacks, promises, and async/await.</a></li>
+            <li><a href="js-43.html" class="program-link">43. Fetch data from an API using Fetch API.</a></li>
+            <li><a href="js-44.html" class="program-link">44. Display API data dynamically on a webpage.</a></li>
+            <li><a href="js-45.html" class="program-link">45. Store and retrieve data using localStorage.</a></li>
+            <li><a href="js-46.html" class="program-link">46. Create a responsive login form with JavaScript validation.</a></li>
+            <li><a href="js-47.html" class="program-link">47. Create a complete interactive webpage using HTML, CSS, and JavaScript.</a></li>
+            <li><a href="js-48.html" class="program-link">48. Write a JavaScript program to swap two numbers.</a></li>
+            <li><a href="js-49.html" class="program-link">49. Write a program to find the greatest common divisor (GCD) of two numbers.</a></li>
+            <li><a href="js-50.html" class="program-link">50. Write a program to find the least common multiple (LCM) of two numbers.</a></li>
+            <li><a href="js-51.html" class="program-link">51. Write a program to check whether a number is an Armstrong number.</a></li>
+            <li><a href="js-52.html" class="program-link">52. Write a program to check whether a number is a perfect number.</a></li>
+            <li><a href="js-53.html" class="program-link">53. Write a program to generate the multiplication table of a given number.</a></li>
+            <li><a href="js-54.html" class="program-link">54. Write a program to calculate the power of a number.</a></li>
+            <li><a href="js-55.html" class="program-link">55. Write a program to count the number of digits in a number.</a></li>
+            <li><a href="js-56.html" class="program-link">56. Write a program to find the second-largest element in an array.</a></li>
+            <li><a href="js-57.html" class="program-link">57. Write a program to remove duplicate elements from an array.</a></li>
+            <li><a href="js-58.html" class="program-link">58. Write a program to merge two arrays.</a></li>
+            <li><a href="js-59.html" class="program-link">59. Write a program to find the frequency of each element in an array.</a></li>
+            <li><a href="js-60.html" class="program-link">60. Write a program to find common elements in two arrays.</a></li>
+            <li><a href="js-61.html" class="program-link">61. Write a program to reverse a string.</a></li>
+            <li><a href="js-62.html" class="program-link">62. Write a program to check whether a string is a palindrome.</a></li>
+            <li><a href="js-63.html" class="program-link">63. Write a program to count vowels and consonants in a string.</a></li>
+            <li><a href="js-64.html" class="program-link">64. Write a program to count the number of words in a string.</a></li>
+            <li><a href="js-65.html" class="program-link">65. Write a program to find the frequency of characters in a string.</a></li>
+            <li><a href="js-66.html" class="program-link">66. Write a program to demonstrate regular expressions in JavaScript.</a></li>
+            <li><a href="js-67.html" class="program-link">67. Write a program to validate an email address using a regular expression.</a></li>
+        </ul>
+
+        <!-- SECTION 2: DOM MANIPULATION -->
+        <h2 class="category-title">DOM Manipulation</h2>
+        <ul>
+            <li><a href="dom1-01.html" class="program-link">1. Create a webpage and use JavaScript to add new elements dynamically.</a></li>
+            <li><a href="dom1-02.html" class="program-link">2. Create a program to remove HTML elements dynamically.</a></li>
+            <li><a href="dom1-03.html" class="program-link">3. Create a program to change CSS styles using JavaScript.</a></li>
+            <li><a href="dom1-04.html" class="program-link">4. Create a program to change multiple HTML elements simultaneously.</a></li>
+            <li><a href="dom1-05.html" class="program-link">5. Demonstrate getElementById() and getElementsByClassName().</a></li>
+            <li><a href="dom1-06.html" class="program-link">6. Demonstrate querySelector() and querySelectorAll().</a></li>
+            <li><a href="dom1-07.html" class="program-link">7. Create a program to create and remove CSS classes dynamically.</a></li>
+            <li><a href="dom1-08.html" class="program-link">8. Create a dynamic table using JavaScript.</a></li>
+            <li><a href="dom1-09.html" class="program-link">9. Create a program to add and delete rows from a table.</a></li>
+            <li><a href="dom1-10.html" class="program-link">10. Create a program to search/filter table records.</a></li>
+            <li><a href="dom1-11.html" class="program-link">11. Create a live character counter for a textarea.</a></li>
+            <li><a href="dom1-12.html" class="program-link">12. Create a password show/hide feature.</a></li>
+            <li><a href="dom1-13.html" class="program-link">13. Create a dynamic dropdown list.</a></li>
+            <li><a href="dom1-14.html" class="program-link">14. Create a dependent dropdown such as Country &rarr; State &rarr; City.</a></li>
+            <li><a href="dom1-15.html" class="program-link">15. Create an image slideshow/carousel using JavaScript.</a></li>
+        </ul>
+
+        <!-- SECTION 3: EVENTS -->
+        <h2 class="category-title">Events</h2>
+        <ul>
+            <li><a href="evt1-01.html" class="program-link">1. Demonstrate mouse events using JavaScript.</a></li>
+            <li><a href="evt1-02.html" class="program-link">2. Demonstrate keyboard events using JavaScript.</a></li>
+            <li><a href="evt1-03.html" class="program-link">3. Demonstrate form events such as submit, change, focus, and blur.</a></li>
+            <li><a href="evt1-04.html" class="program-link">4. Create a webpage that responds to double-click events.</a></li>
+            <li><a href="evt1-05.html" class="program-link">5. Create a program using event bubbling and event capturing.</a></li>
+            <li><a href="evt1-06.html" class="program-link">6. Demonstrate event delegation.</a></li>
+            <li><a href="evt1-07.html" class="program-link">7. Create a keyboard-controlled webpage/game.</a></li>
+            <li><a href="evt1-08.html" class="program-link">8. Create a drag-and-drop application using JavaScript.</a></li>
+        </ul>
+
+        <!-- SECTION 4: FORMS & VALIDATION -->
+        <h2 class="category-title">Forms & Validation</h2>
+        <ul>
+            <li><a href="frm1-01.html" class="program-link">1. Create a student registration form with JavaScript validation.</a></li>
+            <li><a href="frm1-02.html" class="program-link">2. Create a login form with username and password validation.</a></li>
+            <li><a href="frm1-03.html" class="program-link">3. Create a password strength checker.</a></li>
+            <li><a href="frm1-04.html" class="program-link">4. Create a signup form with password confirmation.</a></li>
+            <li><a href="frm1-05.html" class="program-link">5. Create a feedback form with validation.</a></li>
+            <li><a href="frm1-06.html" class="program-link">6. Create a college admission form with JavaScript validation.</a></li>
+            <li><a href="frm1-07.html" class="program-link">7. Display validation error messages dynamically without reloading the page.</a></li>
+        </ul>
+
+        <!-- SECTION 5: BROWSER & STORAGE -->
+        <h2 class="category-title">Browser & Storage</h2>
+        <ul>
+            <li><a href="brw1-01.html" class="program-link">1. Demonstrate the Window object.</a></li>
+            <li><a href="brw1-02.html" class="program-link">2. Demonstrate the Navigator object.</a></li>
+            <li><a href="brw1-03.html" class="program-link">3. Demonstrate the Location object.</a></li>
+            <li><a href="brw1-04.html" class="program-link">4. Demonstrate the History object.</a></li>
+            <li><a href="brw1-05.html" class="program-link">5. Create a program using localStorage.</a></li>
+            <li><a href="brw1-06.html" class="program-link">6. Create a program using sessionStorage.</a></li>
+            <li><a href="brw1-07.html" class="program-link">7. Create a shopping cart using localStorage.</a></li>
+            <li><a href="brw1-08.html" class="program-link">8. Create a theme switcher (light/dark mode) using localStorage.</a></li>
+        </ul>
+
+        <!-- SECTION 6: MINI PROJECTS -->
+        <h2 class="category-title">Mini Projects</h2>
+        <ul>
+            <li><a href="proj-01.html" class="program-link">1. Create a digital calculator.</a></li>
+            <li><a href="proj-02.html" class="program-link">2. Create a digital clock.</a></li>
+            <li><a href="proj-03.html" class="program-link">3. Create a stopwatch.</a></li>
+            <li><a href="proj-04.html" class="program-link">4. Create a countdown timer.</a></li>
+            <li><a href="proj-05.html" class="program-link">5. Create a to-do list application.</a></li>
+            <li><a href="proj-06.html" class="program-link">6. Create a weather application using an API.</a></li>
+            <li><a href="proj-07.html" class="program-link">7. Create a quiz application.</a></li>
+            <li><a href="proj-08.html" class="program-link">8. Create a number guessing game.</a></li>
+            <li><a href="proj-09.html" class="program-link">9. Create a tic-tac-toe game.</a></li>
+            <li><a href="proj-10.html" class="program-link">10. Create a simple expense tracker.</a></li>
+            <li><a href="proj-11.html" class="program-link">11. Create a student marks/grade calculator.</a></li>
+            <li><a href="proj-12.html" class="program-link">12. Create a simple shopping cart.</a></li>
+            <li><a href="proj-13.html" class="program-link">13. Create a notes application using localStorage.</a></li>
+            <li><a href="proj-14.html" class="program-link">14. Create a random password generator.</a></li>
+            <li><a href="proj-15.html" class="program-link">15. Create a BMI calculator.</a></li>
+            <li><a href="proj-16.html" class="program-link">16. Create a currency converter using an API.</a></li>
+            <li><a href="proj-17.html" class="program-link">17. Create a complete interactive portfolio website using HTML, CSS, and JavaScript.</a></li>
+        </ul>
+
+        <!-- SECTION 7: DOM MANIPULATION (Part 2) -->
+        <h2 class="category-title">DOM Manipulation (Extended)</h2>
+        <ul>
+            <li><a href="dom2-01.html" class="program-link">1. Change the text content of an HTML element using JavaScript.</a></li>
+            <li><a href="dom2-02.html" class="program-link">2. Change the HTML content of an element using innerHTML.</a></li>
+            <li><a href="dom2-03.html" class="program-link">3. Change the style of an HTML element dynamically.</a></li>
+            <li><a href="dom2-04.html" class="program-link">4. Change the background color of an element when a button is clicked.</a></li>
+            <li><a href="dom2-05.html" class="program-link">5. Create a new HTML element dynamically and add it to the webpage.</a></li>
+            <li><a href="dom2-06.html" class="program-link">6. Remove an existing HTML element dynamically.</a></li>
+            <li><a href="dom2-07.html" class="program-link">7. Replace an existing HTML element with a new element.</a></li>
+            <li><a href="dom2-08.html" class="program-link">8. Add and remove CSS classes using JavaScript.</a></li>
+            <li><a href="dom2-09.html" class="program-link">9. Toggle a CSS class using JavaScript.</a></li>
+            <li><a href="dom2-10.html" class="program-link">10. Change the attributes of an HTML element dynamically.</a></li>
+            <li><a href="dom2-11.html" class="program-link">11. Create a dynamic unordered list from an array.</a></li>
+            <li><a href="dom2-12.html" class="program-link">12. Create a dynamic ordered list from user input.</a></li>
+            <li><a href="dom2-13.html" class="program-link">13. Create a dynamic student table using JavaScript.</a></li>
+            <li><a href="dom2-14.html" class="program-link">14. Add new rows to an HTML table dynamically.</a></li>
+            <li><a href="dom2-15.html" class="program-link">15. Delete a selected row from an HTML table.</a></li>
+            <li><a href="dom2-16.html" class="program-link">16. Edit table data dynamically.</a></li>
+            <li><a href="dom2-17.html" class="program-link">17. Create a searchable/filterable table.</a></li>
+            <li><a href="dom2-18.html" class="program-link">18. Sort table records using JavaScript.</a></li>
+            <li><a href="dom2-19.html" class="program-link">19. Create a dynamic dropdown menu using JavaScript.</a></li>
+            <li><a href="dom2-20.html" class="program-link">20. Add options dynamically to a &lt;select&gt; element.</a></li>
+            <li><a href="dom2-21.html" class="program-link">21. Create a dependent dropdown Country &rarr; State &rarr; City.</a></li>
+            <li><a href="dom2-22.html" class="program-link">22. Create an image gallery dynamically from an array of image data.</a></li>
+            <li><a href="dom2-23.html" class="program-link">23. Create an image slideshow using DOM manipulation.</a></li>
+            <li><a href="dom2-24.html" class="program-link">24. Create a show/hide password feature.</a></li>
+            <li><a href="dom2-25.html" class="program-link">25. Create a show/hide content button.</a></li>
+            <li><a href="dom2-26.html" class="program-link">26. Create a tabs interface using DOM manipulation.</a></li>
+            <li><a href="dom2-27.html" class="program-link">27. Create an accordion using JavaScript.</a></li>
+            <li><a href="dom2-28.html" class="program-link">28. Create a modal popup using JavaScript.</a></li>
+            <li><a href="dom2-29.html" class="program-link">29. Create a tooltip dynamically.</a></li>
+            <li><a href="dom2-30.html" class="program-link">30. Create a live character counter for a textarea.</a></li>
+            <li><a href="dom2-31.html" class="program-link">31. Create a live word counter.</a></li>
+            <li><a href="dom2-32.html" class="program-link">32. Create a program to dynamically display the current date and time.</a></li>
+            <li><a href="dom2-33.html" class="program-link">33. Create a to-do list using DOM manipulation.</a></li>
+            <li><a href="dom2-34.html" class="program-link">34. Create a program to add, edit, and delete to-do items.</a></li>
+            <li><a href="dom2-35.html" class="program-link">35. Demonstrate createElement(), appendChild(), remove(), and replaceChild().</a></li>
+        </ul>
+
+        <!-- SECTION 8: 2. JAVASCRIPT EVENTS -->
+        <h2 class="category-title">2. JavaScript Events</h2>
+        <ul>
+            <li><a href="evt2-01.html" class="program-link">1. Demonstrate the onclick event.</a></li>
+            <li><a href="evt2-02.html" class="program-link">2. Demonstrate the ondblclick event.</a></li>
+            <li><a href="evt2-03.html" class="program-link">3. Demonstrate onmouseover and onmouseout.</a></li>
+            <li><a href="evt2-04.html" class="program-link">4. Demonstrate onmousedown and onmouseup.</a></li>
+            <li><a href="evt2-05.html" class="program-link">5. Demonstrate the onmousemove event.</a></li>
+            <li><a href="evt2-06.html" class="program-link">6. Demonstrate keyboard events using keydown.</a></li>
+            <li><a href="evt2-07.html" class="program-link">7. Demonstrate keyboard events using keyup.</a></li>
+            <li><a href="evt2-08.html" class="program-link">8. Create a webpage that displays the key pressed by the user.</a></li>
+            <li><a href="evt2-09.html" class="program-link">9. Create a program that counts the number of keyboard key presses.</a></li>
+            <li><a href="evt2-10.html" class="program-link">10. Demonstrate the focus and blur events.</a></li>
+            <li><a href="evt2-11.html" class="program-link">11. Demonstrate the change event.</a></li>
+            <li><a href="evt2-12.html" class="program-link">12. Demonstrate the input event.</a></li>
+            <li><a href="evt2-13.html" class="program-link">13. Demonstrate the submit event.</a></li>
+            <li><a href="evt2-14.html" class="program-link">14. Demonstrate the reset event.</a></li>
+            <li><a href="evt2-15.html" class="program-link">15. Create a button that changes the background color when clicked.</a></li>
+            <li><a href="evt2-16.html" class="program-link">16. Create a button that changes font size dynamically.</a></li>
+            <li><a href="evt2-17.html" class="program-link">17. Create a webpage with multiple buttons having different event handlers.</a></li>
+            <li><a href="evt2-18.html" class="program-link">18. Demonstrate event listeners using addEventListener().</a></li>
+            <li><a href="evt2-19.html" class="program-link">19. Add multiple event listeners to a single element.</a></li>
+            <li><a href="evt2-20.html" class="program-link">20. Remove an event listener using removeEventListener().</a></li>
+            <li><a href="evt2-21.html" class="program-link">21. Demonstrate event bubbling.</a></li>
+            <li><a href="evt2-22.html" class="program-link">22. Demonstrate event capturing.</a></li>
+            <li><a href="evt2-23.html" class="program-link">23. Demonstrate event delegation.</a></li>
+            <li><a href="evt2-24.html" class="program-link">24. Create a drag-and-drop application.</a></li>
+            <li><a href="evt2-25.html" class="program-link">25. Create a mouse coordinate tracker.</a></li>
+            <li><a href="evt2-26.html" class="program-link">26. Create a keyboard-controlled moving object.</a></li>
+            <li><a href="evt2-27.html" class="program-link">27. Create a click counter.</a></li>
+            <li><a href="evt2-28.html" class="program-link">28. Create a double-click counter.</a></li>
+            <li><a href="evt2-29.html" class="program-link">29. Create a reaction-time game.</a></li>
+            <li><a href="evt2-30.html" class="program-link">30. Create a simple keyboard typing test.</a></li>
+        </ul>
+
+        <!-- SECTION 9: 3. FORMS AND VALIDATION -->
+        <h2 class="category-title">3. Forms and Validation</h2>
+        <ul>
+            <li><a href="frm2-01.html" class="program-link">1. Create a student registration form and validate all fields.</a></li>
+            <li><a href="frm2-02.html" class="program-link">2. Create a login form with username and password validation.</a></li>
+            <li><a href="frm2-03.html" class="program-link">3. Validate a name field to accept only alphabets.</a></li>
+            <li><a href="frm2-04.html" class="program-link">4. Validate an age field using JavaScript.</a></li>
+            <li><a href="frm2-05.html" class="program-link">5. Validate a mobile phone number.</a></li>
+            <li><a href="frm2-06.html" class="program-link">6. Validate an email address.</a></li>
+            <li><a href="frm2-07.html" class="program-link">7. Validate a password based on minimum length.</a></li>
+            <li><a href="frm2-08.html" class="program-link">8. Create a strong password validator.</a></li>
+            <li><a href="frm2-09.html" class="program-link">9. Validate password and confirm password fields.</a></li>
+            <li><a href="frm2-10.html" class="program-link">10. Validate a date of birth field.</a></li>
+            <li><a href="frm2-11.html" class="program-link">11. Validate a gender selection.</a></li>
+            <li><a href="frm2-12.html" class="program-link">12. Validate radio buttons.</a></li>
+            <li><a href="frm2-13.html" class="program-link">13. Validate checkbox selection.</a></li>
+            <li><a href="frm2-14.html" class="program-link">14. Validate a dropdown/select box.</a></li>
+            <li><a href="frm2-15.html" class="program-link">15. Validate a textarea.</a></li>
+            <li><a href="frm2-16.html" class="program-link">16. Create a form with required-field validation.</a></li>
+            <li><a href="frm2-17.html" class="program-link">17. Display error messages beside individual form fields.</a></li>
+            <li><a href="frm2-18.html" class="program-link">18. Display a success message after successful form submission.</a></li>
+            <li><a href="frm2-19.html" class="program-link">19. Prevent form submission when validation fails.</a></li>
+            <li><a href="frm2-20.html" class="program-link">20. Validate a form using regular expressions.</a></li>
+            <li><a href="frm2-21.html" class="program-link">21. Validate an email using a regular expression.</a></li>
+            <li><a href="frm2-22.html" class="program-link">22. Validate a phone number using a regular expression.</a></li>
+            <li><a href="frm2-23.html" class="program-link">23. Validate a password using a regular expression.</a></li>
+            <li><a href="frm2-24.html" class="program-link">24. Create a real-time form validation system.</a></li>
+            <li><a href="frm2-25.html" class="program-link">25. Validate fields using the input, change, focus, and blur events.</a></li>
+            <li><a href="frm2-26.html" class="program-link">26. Create a password strength meter.</a></li>
+            <li><a href="frm2-27.html" class="program-link">27. Create a show/hide password option.</a></li>
+            <li><a href="frm2-28.html" class="program-link">28. Create a registration form with password confirmation.</a></li>
+            <li><a href="frm2-29.html" class="program-link">29. Create a college admission form with complete validation.</a></li>
+            <li><a href="frm2-30.html" class="program-link">30. Create a job application form with validation.</a></li>
+            <li><a href="frm2-31.html" class="program-link">31. Create a feedback form with validation.</a></li>
+            <li><a href="frm2-32.html" class="program-link">32. Create a contact form with validation.</a></li>
+            <li><a href="frm2-33.html" class="program-link">33. Create a multi-step registration form.</a></li>
+            <li><a href="frm2-34.html" class="program-link">34. Create a form that displays a preview of entered information before submission.</a></li>
+            <li><a href="frm2-35.html" class="program-link">35. Create a form that calculates and displays age from date of birth.</a></li>
+            <li><a href="frm2-36.html" class="program-link">36. Create a marks entry form and calculate total, average, and grade.</a></li>
+            <li><a href="frm2-37.html" class="program-link">37. Create an employee salary form and calculate salary details.</a></li>
+            <li><a href="frm2-38.html" class="program-link">38. Create a shopping order form and calculate the total price.</a></li>
+            <li><a href="frm2-39.html" class="program-link">39. Create a form with dynamic fields based on user selection.</a></li>
+            <li><a href="frm2-40.html" class="program-link">40. Create a form that validates input and displays errors without page reload.</a></li>
+        </ul>
+
+        <!-- SECTION 10: 4. BROWSER OBJECTS & BROWSER FEATURES -->
+        <h2 class="category-title">4. Browser Objects & Browser Features</h2>
+        <ul>
+            <li><a href="brw2-01.html" class="program-link">1. Demonstrate the Window object.</a></li>
+            <li><a href="brw2-02.html" class="program-link">2. Demonstrate alert(), confirm(), and prompt().</a></li>
+            <li><a href="brw2-03.html" class="program-link">3. Create a program using setTimeout().</a></li>
+            <li><a href="brw2-04.html" class="program-link">4. Create a program using setInterval().</a></li>
+            <li><a href="brw2-05.html" class="program-link">5. Create a digital clock using setInterval().</a></li>
+            <li><a href="brw2-06.html" class="program-link">6. Create a countdown timer.</a></li>
+            <li><a href="brw2-07.html" class="program-link">7. Create a stopwatch.</a></li>
+            <li><a href="brw2-08.html" class="program-link">8. Demonstrate the Location object.</a></li>
+            <li><a href="brw2-09.html" class="program-link">9. Create a button to redirect the user to another webpage.</a></li>
+            <li><a href="brw2-10.html" class="program-link">10. Display the current webpage URL using JavaScript.</a></li>
+            <li><a href="brw2-11.html" class="program-link">11. Demonstrate the History object.</a></li>
+            <li><a href="brw2-12.html" class="program-link">12. Create buttons for Back, Forward, and Reload browser operations.</a></li>
+            <li><a href="brw2-13.html" class="program-link">13. Demonstrate the Navigator object.</a></li>
+            <li><a href="brw2-14.html" class="program-link">14. Display browser information using JavaScript.</a></li>
+            <li><a href="brw2-15.html" class="program-link">15. Display the user's screen width and height.</a></li>
+            <li><a href="brw2-16.html" class="program-link">16. Detect whether the browser is online or offline.</a></li>
+            <li><a href="brw2-17.html" class="program-link">17. Display the current browser language.</a></li>
+            <li><a href="brw2-18.html" class="program-link">18. Demonstrate browser geolocation.</a></li>
+            <li><a href="brw2-19.html" class="program-link">19. Display the user's current geographical coordinates using the Geolocation API.</a></li>
+            <li><a href="brw2-20.html" class="program-link">20. Create a webpage that updates information when the browser goes online/offline.</a></li>
+        </ul>
+
+        <!-- SECTION 11: 5. WEB STORAGE -->
+        <h2 class="category-title">5. Web Storage</h2>
+        <ul>
+            <li><a href="str2-01.html" class="program-link">1. Store a username using localStorage.</a></li>
+            <li><a href="str2-02.html" class="program-link">2. Retrieve and display data from localStorage.</a></li>
+            <li><a href="str2-03.html" class="program-link">3. Update data stored in localStorage.</a></li>
+            <li><a href="str2-04.html" class="program-link">4. Delete an item from localStorage.</a></li>
+            <li><a href="str2-05.html" class="program-link">5. Clear all localStorage data.</a></li>
+            <li><a href="str2-06.html" class="program-link">6. Store multiple values using localStorage.</a></li>
+            <li><a href="str2-07.html" class="program-link">7. Store an array in localStorage using JSON.</a></li>
+            <li><a href="str2-08.html" class="program-link">8. Store a JavaScript object in localStorage.</a></li>
+            <li><a href="str2-09.html" class="program-link">9. Create a student record system using localStorage.</a></li>
+            <li><a href="str2-10.html" class="program-link">10. Create a to-do list using localStorage.</a></li>
+            <li><a href="str2-11.html" class="program-link">11. Create a notes application using localStorage.</a></li>
+            <li><a href="str2-12.html" class="program-link">12. Create a shopping cart using localStorage.</a></li>
+            <li><a href="str2-13.html" class="program-link">13. Create a login preference system using localStorage.</a></li>
+            <li><a href="str2-14.html" class="program-link">14. Create a dark/light theme switcher using localStorage.</a></li>
+            <li><a href="str2-15.html" class="program-link">15. Save the user's preferred font size using localStorage.</a></li>
+            <li><a href="str2-16.html" class="program-link">16. Create a recently viewed items feature using localStorage.</a></li>
+            <li><a href="str2-17.html" class="program-link">17. Create a visitor counter using browser storage.</a></li>
+            <li><a href="str2-18.html" class="program-link">18. Compare localStorage and session Storage.</a></li>
+            <li><a href="str2-19.html" class="program-link">19. Store temporary form data using sessionStorage.</a></li>
+            <li><a href="str2-20.html" class="program-link">20. Create a multi-page form using sessionStorage.</a></li>
+            <li><a href="str2-21.html" class="program-link">21. Save form data automatically using localStorage.</a></li>
+            <li><a href="str2-22.html" class="program-link">22. Restore previously entered form data after refreshing the page.</a></li>
+            <li><a href="str2-23.html" class="program-link">23. Create a shopping cart that persists after page refresh.</a></li>
+            <li><a href="str2-24.html" class="program-link">24. Create a student marks database using localStorage.</a></li>
+            <li><a href="str2-25.html" class="program-link">25. Create a CRUD application using localStorage - Create, Read, Update, and Delete records.</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>

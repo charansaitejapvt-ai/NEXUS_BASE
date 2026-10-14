@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Programs</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 30px; max-width: 900px; margin: 0 auto; overflow-x: hidden; }
+        
+        .glow-1 { position: fixed; top: -10%; left: -10%; width: 400px; height: 400px; background: #800020; border-radius: 50%; filter: blur(150px); opacity: 0.25; z-index: -1; animation: float 10s infinite alternate; }
+        .glow-2 { position: fixed; bottom: -10%; right: -5%; width: 350px; height: 350px; background: #4a0414; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1; animation: float 8s infinite alternate-reverse; }
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(20px) scale(1.1); } }
+
+        .glass-container { 
+            background: linear-gradient(135deg, rgba(50, 50, 50, 0.3) 0%, rgba(20, 20, 20, 0.6) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(128, 0, 32, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(128,0,32,0.1);
+            margin-bottom: 25px;
+        }
+        
+        .nav-btn { display: inline-block; padding: 12px 25px; background: rgba(128, 0, 32, 0.15); color: #e0e0e0; text-decoration: none; border: 1px solid rgba(128, 0, 32, 0.4); border-radius: 30px; margin-bottom: 20px; transition: 0.3s; font-weight: bold; backdrop-filter: blur(10px); }
+        .nav-btn:hover { background: rgba(128, 0, 32, 0.8); color: white; box-shadow: 0 4px 15px rgba(128, 0, 32, 0.6); transform: translateY(-2px); }
+        
+        h1 { color: white; margin-top: 0; background: linear-gradient(45deg, #ffffff, #d4a3b3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; border-bottom: 1px solid rgba(128, 0, 32, 0.4); padding-bottom: 15px; margin-bottom: 30px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        
+        ul { list-style: none; padding-left: 0; margin: 0; }
+        li {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(128, 0, 32, 0.15);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        li:hover {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.25), rgba(74, 4, 20, 0.4));
+            border-color: rgba(255, 107, 139, 0.4);
+            transform: translateX(10px) translateY(-2px);
+            box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 107, 139, 0.1);
+        }
+
+        a.program-link { color: #d4a3b3; text-decoration: none; display: block; padding: 18px 20px; font-size: 1.1rem; line-height: 1.4; transition: color 0.3s; z-index: 2; position: relative; }
+        li:hover a.program-link { color: #ffffff; text-shadow: 0 0 8px rgba(255, 107, 139, 0.5); }
+    </style>
+</head>
+<body>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <a href="../index.html" class="nav-btn">← Back to Home</a>
+    
+    <div class="glass-container">
+        <h1>CSS Programs</h1>
+        <ul>
+            <li><a href="css-01.html" class="program-link">1. Create a webpage demonstrating inline, internal, and external CSS.</a></li>
+            <li><a href="css-02.html" class="program-link">2. Create a webpage using different CSS selectors.</a></li>
+            <li><a href="css-03.html" class="program-link">3. Demonstrate CSS colors, backgrounds, and borders.</a></li>
+            <li><a href="css-04.html" class="program-link">4. Create a webpage demonstrating font properties and text formatting.</a></li>
+            <li><a href="css-05.html" class="program-link">5. Demonstrate the CSS box model using margin, border, padding, and content.</a></li>
+            <li><a href="css-06.html" class="program-link">6. Create a webpage using different width, height, and sizing properties.</a></li>
+            <li><a href="css-07.html" class="program-link">7. Create a webpage demonstrating CSS positioning - static, relative, absolute, fixed, and sticky.</a></li>
+            <li><a href="css-08.html" class="program-link">8. Create a webpage using float and clear properties.</a></li>
+            <li><a href="css-09.html" class="program-link">9. Create a styled navigation bar using CSS.</a></li>
+            <li><a href="css-10.html" class="program-link">10. Create a webpage demonstrating pseudo-classes such as :hover, active, focus, and :visited.</a></li>
+            <li><a href="css-11.html" class="program-link">11. Create a webpage demonstrating pseudo-elements such as ::before, ::after, ::first-letter, and ::first-line.</a></li>
+            <li><a href="css-12.html" class="program-link">12. Create a webpage using CSS lists and tables.</a></li>
+            <li><a href="css-13.html" class="program-link">13. Create a webpage with a styled registration form using CSS.</a></li>
+            <li><a href="css-14.html" class="program-link">14. Create a webpage demonstrating CSS Flexbox.</a></li>
+            <li><a href="css-15.html" class="program-link">15. Create a webpage demonstrating CSS Grid layout.</a></li>
+            <li><a href="css-16.html" class="program-link">16. Create a responsive webpage using CSS media queries.</a></li>
+            <li><a href="css-17.html" class="program-link">17. Create a webpage demonstrating transitions and transformations.</a></li>
+            <li><a href="css-18.html" class="program-link">18. Create a webpage using CSS animations.</a></li>
+            <li><a href="css-19.html" class="program-link">19. Create a responsive navigation menu using HTML and CSS.</a></li>
+            <li><a href="css-20.html" class="program-link">20. Design a personal portfolio webpage using HTML and CSS.</a></li>
+            <li><a href="css-21.html" class="program-link">21. Design a college/student profile page using HTML and CSS.</a></li>
+            <li><a href="css-22.html" class="program-link">22. Create a login page using HTML and CSS.</a></li>
+            <li><a href="css-23.html" class="program-link">23. Create a product card layout using CSS.</a></li>
+            <li><a href="css-24.html" class="program-link">24. Create a responsive photo gallery using CSS Grid/Flexbox.</a></li>
+            <li><a href="css-25.html" class="program-link">25. Create a complete website homepage using HTML and CSS.</a></li>
+            <li><a href="css-26.html" class="program-link">26. Create a webpage demonstrating CSS inheritance and specificity.</a></li>
+            <li><a href="css-27.html" class="program-link">27. Demonstrate the use of universal, element, class, ID, attribute, and grouping selectors.</a></li>
+            <li><a href="css-28.html" class="program-link">28. Create a webpage using combinator selectors: descendant, child, adjacent sibling, and general sibling.</a></li>
+            <li><a href="css-29.html" class="program-link">29. Create a webpage demonstrating CSS variables (custom properties).</a></li>
+            <li><a href="css-30.html" class="program-link">30. Create a webpage using different background images and background positioning.</a></li>
+            <li><a href="css-31.html" class="program-link">31. Demonstrate linear gradients and radial gradients using CSS.</a></li>
+            <li><a href="css-32.html" class="program-link">32. Create a webpage demonstrating box-shadow and text-shadow.</a></li>
+            <li><a href="css-33.html" class="program-link">33. Create a webpage using border-radius to design different shapes.</a></li>
+            <li><a href="css-34.html" class="program-link">34. Demonstrate opacity and transparency using CSS.</a></li>
+            <li><a href="css-35.html" class="program-link">35. Create a webpage using overflow properties.</a></li>
+            <li><a href="css-36.html" class="program-link">36. Demonstrate z-index and stacking order.</a></li>
+            <li><a href="css-37.html" class="program-link">37. Create a webpage using CSS display properties such as block, inline, inline-block, and none.</a></li>
+            <li><a href="css-38.html" class="program-link">38. Create a webpage demonstrating visibility and hiding elements.</a></li>
+            <li><a href="css-39.html" class="program-link">39. Create a dropdown menu using HTML and CSS.</a></li>
+            <li><a href="css-40.html" class="program-link">40. Create an image hover effect using CSS.</a></li>
+            <li><a href="css-41.html" class="program-link">41. Create a tooltip using CSS.</a></li>
+            <li><a href="css-42.html" class="program-link">42. Create a webpage with a CSS-only button hover animation.</a></li>
+            <li><a href="css-43.html" class="program-link">43. Create a webpage demonstrating CSS filters such as blur, grayscale, brightness, and contrast.</a></li>
+            <li><a href="css-44.html" class="program-link">44. Create a webpage demonstrating object-fit and object-position.</a></li>
+            <li><a href="css-45.html" class="program-link">45. Create a responsive image gallery using CSS.</a></li>
+            <li><a href="css-46.html" class="program-link">46. Create a card-based layout using Flexbox.</a></li>
+            <li><a href="css-47.html" class="program-link">47. Create a dashboard layout using CSS Grid.</a></li>
+            <li><a href="css-48.html" class="program-link">48. Create a two-column webpage layout using CSS Grid.</a></li>
+            <li><a href="css-49.html" class="program-link">49. Create a three-column webpage layout using Flexbox.</a></li>
+            <li><a href="css-50.html" class="program-link">50. Create a webpage with a sticky header.</a></li>
+            <li><a href="css-51.html" class="program-link">51. Create a webpage with a fixed sidebar.</a></li>
+            <li><a href="css-52.html" class="program-link">52. Create a responsive footer using HTML and CSS.</a></li>
+            <li><a href="css-53.html" class="program-link">53. Create a responsive login and signup page.</a></li>
+            <li><a href="css-54.html" class="program-link">54. Create a responsive contact form.</a></li>
+            <li><a href="css-55.html" class="program-link">55. Create a responsive college website homepage.</a></li>
+            <li><a href="css-56.html" class="program-link">56. Create a restaurant webpage using HTML and CSS.</a></li>
+            <li><a href="css-57.html" class="program-link">57. Create an online shopping webpage using CSS.</a></li>
+            <li><a href="css-58.html" class="program-link">58. Create a travel website homepage using CSS.</a></li>
+            <li><a href="css-59.html" class="program-link">59. Create a news/blog webpage layout using CSS Grid.</a></li>
+            <li><a href="css-60.html" class="program-link">60. Create a portfolio website with multiple sections using HTML and CSS.</a></li>
+            <li><a href="css-61.html" class="program-link">61. Create a webpage using CSS Grid template areas.</a></li>
+            <li><a href="css-62.html" class="program-link">62. Demonstrate Flexbox alignment and ordering properties.</a></li>
+            <li><a href="css-63.html" class="program-link">63. Create a responsive layout using CSS Grid and media queries.</a></li>
+            <li><a href="css-64.html" class="program-link">64. Create a mobile-first responsive webpage.</a></li>
+            <li><a href="css-65.html" class="program-link">65. Create a webpage demonstrating CSS transitions.</a></li>
+            <li><a href="css-66.html" class="program-link">66. Create a webpage demonstrating 2D and 3D CSS transformations.</a></li>
+            <li><a href="css-67.html" class="program-link">67. Create a webpage using keyframe animations.</a></li>
+            <li><a href="css-68.html" class="program-link">68. Create a loading spinner animation using CSS.</a></li>
+            <li><a href="css-69.html" class="program-link">69. Create a sliding image/card animation using CSS.</a></li>
+            <li><a href="css-70.html" class="program-link">70. Create a CSS-only modal/popup design.</a></li>
+            <li><a href="css-71.html" class="program-link">71. Create a dark-mode webpage using CSS variables.</a></li>
+            <li><a href="css-72.html" class="program-link">72. Create a webpage demonstrating responsive typography.</a></li>
+            <li><a href="css-73.html" class="program-link">73. Create a webpage using clamp(), min(), and max() CSS functions.</a></li>
+            <li><a href="css-74.html" class="program-link">74. Create a webpage demonstrating CSS calc() function.</a></li>
+            <li><a href="css-75.html" class="program-link">75. Create a complete responsive website using HTML5, CSS3, Flexbox, Grid, and media queries.</a></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>9. Write a program to check whether a number is a palindrome.</title><link rel="stylesheet" href="shared.css"></head><body><div class="glow-1"></div><div class="glow-2"></div><div class="nav glass-card"><a href="index.html">Home</a><a href="index.html">Back to Programs</a></div><div class="glass-card"><h1 class="title">9. Write a program to check whether a number is a palindrome.</h1><p class="desc">Interactive JavaScript experiment with editable source code and live execution.</p></div><div class="execution-container"><section class="code-panel glass-card"><h3 class="panel-title">Source Code</h3><textarea id="rawCode" spellcheck="false">document.body.innerHTML = `&lt;h2&gt;Number Palindrome&lt;/h2&gt;&lt;input id="n" type="number" value="1221"&gt;&lt;button id="go"&gt;Check palindrome&lt;/button&gt;&lt;pre id="out" class="result"&gt;&lt;/pre&gt;`;
+document.getElementById('go').onclick=()=&gt;{const s=document.getElementById('n').value;document.getElementById('out').textContent=s===s.split('').reverse().join('')?`${s} is a palindrome`:`${s} is not a palindrome`;};document.getElementById('go').click();</textarea><p class="hint">Edit the code and select Run Code. Source code uses normal line breaks.</p></section><section class="output-panel glass-card"><h3 class="panel-title">Live Execution</h3><button id="runButton">Run Code ▶</button><iframe id="outputArea" title="Live execution output" sandbox="allow-scripts allow-forms allow-modals"></iframe><p class="hint">Browser APIs may require permission or internet access.</p></section></div><script>
+window.__demoStorage = window.__demoStorage || { local: {}, session: {} };
+window.addEventListener('message', function(event) {
+  const d = event.data;
+  if (!d || d.__demoStorage !== true) return;
+  const scope = d.scope === 'session' ? 'session' : 'local';
+  const store = window.__demoStorage[scope];
+  if (d.method === 'set') store[d.key] = String(d.value);
+  if (d.method === 'remove') delete store[d.key];
+  if (d.method === 'clear') window.__demoStorage[scope] = {};
+  try {
+    const storageKey = '__js_experiment_' + scope;
+    if (d.method === 'set') { const all = JSON.parse(localStorage.getItem(storageKey) || '{}'); all[d.key] = String(d.value); localStorage.setItem(storageKey, JSON.stringify(all)); }
+    if (d.method === 'remove') { const all = JSON.parse(localStorage.getItem(storageKey) || '{}'); delete all[d.key]; localStorage.setItem(storageKey, JSON.stringify(all)); }
+    if (d.method === 'clear') localStorage.removeItem(storageKey);
+  } catch (e) {}
+});
+function runCode() {
+  const code = document.getElementById('rawCode').value;
+  const iframe = document.getElementById('outputArea');
+  const css = `<style>body{background:#111;color:#e0e0e0;font-family:Segoe UI,sans-serif;padding:15px;margin:0}button{padding:9px 14px;background:linear-gradient(135deg,#4a0414,#800020);color:white;border:0;border-radius:7px;margin:4px;cursor:pointer}input,select,textarea{box-sizing:border-box;padding:8px;background:#222;color:#eee;border:1px solid #800020;border-radius:6px}pre,.result{white-space:pre-wrap}img{max-width:100%;border-radius:8px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #63303f;padding:7px}label{display:block;margin:8px 0}a{color:#d4a3b3}</style>`;
+  const localSeed = (() => { try { return JSON.parse(localStorage.getItem('__js_experiment_local') || '{}'); } catch(e) { return window.__demoStorage.local; } })();
+  const sessionSeed = window.__demoStorage.session || {};
+  const bootstrap = `
+    (function(){
+      const seed = {local:${JSON.stringify(window.__demoStorage.local)},session:${JSON.stringify(sessionSeed)}};
+      try { Object.assign(seed.local, ${JSON.stringify(localSeed)}); } catch(e) {}
+      function makeStorage(scope) {
+        const data = Object.assign({}, seed[scope] || {});
+        const notify = (method,key,value) => { try { parent.postMessage({__demoStorage:true,scope,method,key,value}, '*'); } catch(e) {} };
+        return {
+          getItem(key){ key=String(key); return Object.prototype.hasOwnProperty.call(data,key) ? data[key] : null; },
+          setItem(key,value){ key=String(key); value=String(value); data[key]=value; notify('set',key,value); },
+          removeItem(key){ key=String(key); delete data[key]; notify('remove',key); },
+          clear(){ Object.keys(data).forEach(k=>delete data[k]); notify('clear'); },
+          key(i){ return Object.keys(data)[i] ?? null; },
+          get length(){ return Object.keys(data).length; }
+        };
+      }
+      try { Object.defineProperty(window,'localStorage',{configurable:true,value:makeStorage('local')}); } catch(e) {}
+      try { Object.defineProperty(window,'sessionStorage',{configurable:true,value:makeStorage('session')}); } catch(e) {}
+      window.__consoleLines=[];
+      const format = v => { try { return typeof v==='string' ? v : JSON.stringify(v); } catch(e) { return String(v); } };
+      function renderConsole(){ if(!window.__consoleLines.length)return; let p=document.getElementById('__consoleOutput'); if(!p){p=document.createElement('pre');p.id='__consoleOutput';p.className='result';p.style.color='#d4a3b3';document.body.appendChild(p);} p.textContent='Console output\\n'+window.__consoleLines.join('\\n'); }
+      ['log','info','warn','error','table'].forEach(k=>{const original=console[k];console[k]=(...args)=>{window.__consoleLines.push(args.map(format).join(' '));if(original)original.apply(console,args);renderConsole();};});
+      window.addEventListener('error',e=>{let p=document.getElementById('__runtimeError');if(!p){p=document.createElement('pre');p.id='__runtimeError';p.className='result';p.style.color='#ff9b9b';document.body.appendChild(p);}p.textContent='Runtime error: '+e.message+' (line '+e.lineno+')';});
+      window.addEventListener('unhandledrejection',e=>{let p=document.getElementById('__runtimeError');if(!p){p=document.createElement('pre');p.id='__runtimeError';p.className='result';p.style.color='#ff9b9b';document.body.appendChild(p);}p.textContent='Promise error: '+String(e.reason);});
+    })();
+  `;
+  const safe = code.replace(/<\/script/gi, '<\\/script');
+  iframe.srcdoc = '<!DOCTYPE html><html><head>' + css + '</head><body><script>' + bootstrap + '<\/script><script>' + safe + '<\/script></body></html>';
+}
+document.getElementById('runButton').addEventListener('click', runCode);
+window.addEventListener('load', runCode);
+</script></body></html>

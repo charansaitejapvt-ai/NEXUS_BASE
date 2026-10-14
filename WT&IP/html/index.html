@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Programs</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #e0e0e0; padding: 30px; max-width: 900px; margin: 0 auto; overflow-x: hidden; }
+        
+        /* Floating Animated Ambient Glows */
+        .glow-1 { position: fixed; top: -10%; left: -10%; width: 400px; height: 400px; background: #800020; border-radius: 50%; filter: blur(150px); opacity: 0.25; z-index: -1; animation: float 10s infinite alternate; }
+        .glow-2 { position: fixed; bottom: -10%; right: -5%; width: 350px; height: 350px; background: #4a0414; border-radius: 50%; filter: blur(150px); opacity: 0.3; z-index: -1; animation: float 8s infinite alternate-reverse; }
+        @keyframes float { 0% { transform: translateY(0) scale(1); } 100% { transform: translateY(20px) scale(1.1); } }
+
+        /* Enhanced Main Glass Container */
+        .glass-container { 
+            background: linear-gradient(135deg, rgba(50, 50, 50, 0.3) 0%, rgba(20, 20, 20, 0.6) 100%);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(128, 0, 32, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(128,0,32,0.1);
+            margin-bottom: 25px;
+        }
+        
+        /* Navigation Button */
+        .nav-btn { display: inline-block; padding: 12px 25px; background: rgba(128, 0, 32, 0.15); color: #e0e0e0; text-decoration: none; border: 1px solid rgba(128, 0, 32, 0.4); border-radius: 30px; margin-bottom: 20px; transition: 0.3s; font-weight: bold; backdrop-filter: blur(10px); }
+        .nav-btn:hover { background: rgba(128, 0, 32, 0.8); color: white; box-shadow: 0 4px 15px rgba(128, 0, 32, 0.6); transform: translateY(-2px); }
+        
+        h1 { color: white; margin-top: 0; background: linear-gradient(45deg, #ffffff, #d4a3b3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.5rem; border-bottom: 1px solid rgba(128, 0, 32, 0.4); padding-bottom: 15px; margin-bottom: 30px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        
+        /* Mini-Glass List Items */
+        ul { list-style: none; padding-left: 0; margin: 0; }
+        li {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(128, 0, 32, 0.15);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Hover state for list items */
+        li:hover {
+            background: linear-gradient(135deg, rgba(128, 0, 32, 0.25), rgba(74, 4, 20, 0.4));
+            border-color: rgba(255, 107, 139, 0.4);
+            transform: translateX(10px) translateY(-2px);
+            box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 107, 139, 0.1);
+        }
+
+        a.program-link { color: #d4a3b3; text-decoration: none; display: block; padding: 18px 20px; font-size: 1.1rem; line-height: 1.4; transition: color 0.3s; z-index: 2; position: relative; }
+        li:hover a.program-link { color: #ffffff; text-shadow: 0 0 8px rgba(255, 107, 139, 0.5); }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glowing Background Orbs -->
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <a href="../index.html" class="nav-btn">← Back to Home</a>
+    
+    <div class="glass-container">
+        <h1>HTML Programs</h1>
+        <ul>
+            <li><a href="html-01.html" class="program-link">1. Create a basic HTML webpage using headings, paragraphs, and line breaks.</a></li>
+            <li><a href="html-02.html" class="program-link">2. Create an HTML page containing ordered, unordered, and description lists.</a></li>
+            <li><a href="html-03.html" class="program-link">3. Create a webpage using tables with rows, columns, borders, and merged cells.</a></li>
+            <li><a href="html-04.html" class="program-link">4. Create an HTML page containing images and hyperlinks.</a></li>
+            <li><a href="html-05.html" class="program-link">5. Create a student registration form using HTML form elements.</a></li>
+            <li><a href="html-06.html" class="program-link">6. Create a webpage using audio and video elements.</a></li>
+            <li><a href="html-07.html" class="program-link">7. Create a webpage using frames/iframes.</a></li>
+            <li><a href="html-08.html" class="program-link">8. Create an HTML page demonstrating semantic elements such as &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;article&gt;, and &lt;footer&gt;.</a></li>
+            <li><a href="html-09.html" class="program-link">9. Create a webpage using HTML5 input types such as email, date, number, and password.</a></li>
+            <li><a href="html-10.html" class="program-link">10. Create a college timetable using an HTML table.</a></li>
+            <li><a href="html-11.html" class="program-link">11. Create a webpage with internal and external CSS styling.</a></li>
+            <li><a href="html-12.html" class="program-link">12. Create a webpage demonstrating CSS selectors, colors, fonts, margins, padding, and borders.</a></li>
+            <li><a href="html-13.html" class="program-link">13. Create a responsive webpage using CSS media queries.</a></li>
+            <li><a href="html-14.html" class="program-link">14. Create a webpage using Bootstrap components.</a></li>
+            <li><a href="html-15.html" class="program-link">15. Create a simple personal portfolio webpage using HTML and CSS.</a></li>
+        </ul>
+    </div>
+</body>
+</html>

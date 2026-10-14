@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Architecture | CHARAN SAI TEJA</title>
+    <style>
+        /* Core Styling & Typography */
+        body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #050505; color: #d1d5db; margin: 0; padding: 0; min-height: 100vh; overflow-x: hidden; line-height: 1.6; }
+        
+        /* Cinematic Ambient Orbs */
+        .glow-1 { position: fixed; top: -10%; left: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(128,0,32,0.12) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; filter: blur(90px); z-index: -1; animation: breathe 15s infinite alternate ease-in-out; }
+        .glow-2 { position: fixed; bottom: -20%; right: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(74,4,20,0.15) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; filter: blur(80px); z-index: -1; animation: breathe 12s infinite alternate-reverse ease-in-out; }
+        @keyframes breathe { 0% { transform: translate(0, 0) scale(1); opacity: 0.8; } 100% { transform: translate(-30px, 30px) scale(1.1); opacity: 1; } }
+
+        /* Container & Layout */
+        .container { max-width: 1100px; width: 85%; margin: 0 auto; padding: 70px 0 100px 0; display: flex; flex-direction: column; gap: 70px; z-index: 1; }
+
+        /* Initial Load Animation */
+        .fade-in { animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* Hero Section */
+        .hero { text-align: left; border-left: 4px solid #800020; padding-left: 30px; position: relative; }
+        .hero::before { content: 'SYSTEM INITIATED'; position: absolute; top: -25px; left: 30px; font-size: 0.75rem; letter-spacing: 2px; color: #d4a3b3; font-weight: 700; opacity: 0.7; }
+        .hero h1 { margin: 0; font-size: 3.8rem; font-weight: 800; color: #ffffff; letter-spacing: -1.5px; line-height: 1.1; text-transform: uppercase; }
+        .hero p { font-size: 1.2rem; color: #9ca3af; margin: 20px 0 0 0; max-width: 650px; line-height: 1.7; }
+
+        /* System Telemetry (Stats Row) */
+        .telemetry-row { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+        .stat-box { background: rgba(20, 20, 20, 0.6); border: 1px solid rgba(128, 0, 32, 0.2); padding: 15px 25px; border-radius: 8px; flex: 1; min-width: 150px; border-left: 2px solid #d4a3b3; }
+        .stat-num { display: block; font-size: 2rem; font-weight: 800; color: #ffffff; line-height: 1; margin-bottom: 5px; }
+        .stat-label { font-size: 0.8rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+        /* Section Headings */
+        .section-header { margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .section-header h2 { color: #f3f4f6; font-size: 1.8rem; margin: 0; font-weight: 600; letter-spacing: -0.5px; }
+        .section-line { height: 1px; background: linear-gradient(90deg, rgba(128, 0, 32, 0.5), transparent); flex-grow: 1; }
+
+        /* Deep Dive / Info Cells */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .info-cell { background: rgba(15, 15, 15, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 12px; transition: background 0.3s ease; }
+        .info-cell:hover { background: rgba(25, 25, 25, 0.8); border-color: rgba(128, 0, 32, 0.3); }
+        .info-cell h3 { color: #d4a3b3; margin: 0 0 15px 0; font-size: 1.3rem; letter-spacing: 1px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .info-cell p { margin: 0 0 15px 0; font-size: 0.95rem; color: #9ca3af; }
+        .tag-group { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: rgba(128, 0, 32, 0.1); border: 1px solid rgba(128, 0, 32, 0.2); color: #e0e0e0; font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.5px; }
+
+        /* Interactive Portal Grid */
+        .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { 
+            background: rgba(15, 15, 15, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 40px 30px;
+            text-decoration: none; display: flex; flex-direction: column; align-items: flex-start;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative; overflow: hidden;
+        }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(800px circle at 50% 50%, rgba(128,0,32,0.08), transparent 40%); opacity: 0; transition: opacity 0.5s; z-index: 0; pointer-events: none; }
+        .card:hover { transform: translateY(-8px); border-color: rgba(128, 0, 32, 0.5); background: rgba(20, 20, 20, 0.8); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+        .card:hover::before { opacity: 1; }
+        
+        .card-content { z-index: 1; width: 100%; display: flex; flex-direction: column; height: 100%; }
+        .card-title { font-size: 2rem; margin: 0 0 15px 0; color: #ffffff; font-weight: 700; letter-spacing: -0.5px; }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .experiment-count { color: #800020; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px; text-transform: uppercase; background: rgba(128, 0, 32, 0.1); padding: 5px 12px; border-radius: 4px; }
+        .explore-text { color: #d4a3b3; font-weight: 600; font-size: 0.95rem; transition: transform 0.3s ease; opacity: 0.8; }
+        .card:hover .explore-text { opacity: 1; transform: translateX(5px); }
+
+        /* Footer Area Layout */
+        .footer-area { display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 40px; border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 60px; }
+
+        /* Readme Button */
+        .readme-btn { 
+            padding: 16px 50px; background: transparent; color: #ffffff; text-decoration: none; 
+            border: 1px solid rgba(128, 0, 32, 0.6); border-radius: 8px; font-weight: 600; font-size: 1.1rem; 
+            transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; position: relative; overflow: hidden;
+        }
+        .readme-btn::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 0%; background: rgba(128, 0, 32, 0.15); transition: all 0.3s ease; z-index: -1; }
+        .readme-btn:hover { border-color: #d4a3b3; color: #ffffff; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(128,0,32,0.3); }
+        .readme-btn:hover::after { height: 100%; }
+
+        /* Profile Cell */
+        .profile-cell { 
+            background: linear-gradient(135deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.95) 100%);
+            border: 1px solid rgba(128, 0, 32, 0.3); border-radius: 12px; padding: 25px 40px;
+            display: flex; flex-direction: column; gap: 6px; text-align: center;
+            max-width: 400px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .profile-managed { color: #800020; font-size: 0.75rem; letter-spacing: 2px; margin: 0; font-weight: 700; }
+        .profile-name { font-size: 1.3rem; color: #ffffff; font-weight: 700; margin: 5px 0 2px 0; letter-spacing: 1.5px; }
+        .profile-degree { color: #d4a3b3; font-size: 0.95rem; margin: 0; font-weight: 500; }
+        .profile-uni { color: #6b7280; font-size: 0.85rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Cinematic Lighting -->
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <header class="hero fade-in">
+            <h1>NEXUS // WEB ARCHITECTURE</h1>
+            <p>A comprehensive, interactive ledger chronicling the evolution of modern front-end paradigms—from foundational structural semantics to dynamic, asynchronous logic engines.</p>
+        </header>
+
+        <!-- System Telemetry -->
+        <section class="telemetry-row fade-in delay-1">
+            <div class="stat-box">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Core Disciplines</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-num">362</span>
+                <span class="stat-label">Active Modules</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Local Execution</span>
+            </div>
+        </section>
+
+        <!-- Detailed Architectural Pillars -->
+        <section class="fade-in delay-2">
+            <div class="section-header">
+                <h2>Architectural Pillars</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="info-grid">
+                
+                <!-- HTML5 Cell -->
+                <div class="info-cell">
+                    <h3>HTML5</h3>
+                    <p>The structural backbone of the repository. Explores raw DOM initialization, semantic integrity, forms, and multimedia integration without reliant styling.</p>
+                    <div class="tag-group">
+                        <span class="tag">Semantics</span>
+                        <span class="tag">Forms</span>
+                        <span class="tag">Tables</span>
+                        <span class="tag">Iframes</span>
+                    </div>
+                </div>
+
+                <!-- CSS3 Cell -->
+                <div class="info-cell">
+                    <h3>CSS3</h3>
+                    <p>The visual rendering engine. Demonstrates state-of-the-art layout computations, responsive breakpoints, keyframe kinematics, and glassmorphic aesthetics.</p>
+                    <div class="tag-group">
+                        <span class="tag">Flexbox / Grid</span>
+                        <span class="tag">Media Queries</span>
+                        <span class="tag">Animations</span>
+                        <span class="tag">Glassmorphism</span>
+                    </div>
+                </div>
+
+                <!-- JS Cell -->
+                <div class="info-cell">
+                    <h3>JAVASCRIPT</h3>
+                    <p>The dynamic logic controller. Covers advanced algorithmic problem-solving, real-time DOM mutations, synthetic event handling, and browser API utilization.</p>
+                    <div class="tag-group">
+                        <span class="tag">DOM Manipulation</span>
+                        <span class="tag">Event Listeners</span>
+                        <span class="tag">Validation</span>
+                        <span class="tag">Web Storage</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Navigation Portals -->
+        <main class="fade-in delay-3">
+            <div class="section-header">
+                <h2>Execution Environments</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="portal-grid">
+                
+                <a href="html/index.html" class="card">
+                    <div class="card-content">
+                        <h2 class="card-title">HTML Workspace</h2>
+                        <div class="card-meta">
+                            <span class="experiment-count">15 Programs</span>
+                            <span class="explore-text">Initialize &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="css/index.html" class="card">
+                    <div class="card-content">
+                        <h2 class="card-title">CSS Workspace</h2>
+                        <div class="card-meta">
+                            <span class="experiment-count">75 Programs</span>
+                            <span class="explore-text">Initialize &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="javascript/index.html" class="card">
+                    <div class="card-content">
+                        <h2 class="card-title">JS Workspace</h2>
+                        <div class="card-meta">
+                            <span class="experiment-count">272 Programs</span>
+                            <span class="explore-text">Initialize &rarr;</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+
+        <!-- Footer Area -->
+        <footer class="footer-area fade-in delay-4">
+            
+            <!-- About Me Button -->
+            <a href="readme.md" class="readme-btn">About Me</a>
+
+            <!-- Profile Cell -->
+            <section class="profile-cell">
+                <p class="profile-managed">MADE AND MANAGED BY</p>
+                <h3 class="profile-name">CHARAN SAI TEJA</h3>
+                <p class="profile-degree">B.Tech Computer Science</p>
+                <p class="profile-uni">Sai University <span style="opacity: 0.4; padding: 0 5px;">|</span> PRN: 250200385</p>
+            </section>
+            
+        </footer>
+
+    </div>
+
+</body>
+</html>
